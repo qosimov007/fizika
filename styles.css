@@ -1,0 +1,103 @@
+/* Reset default styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Overall body styling */
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    padding: 20px;
+    line-height: 1.6;
+  }
+  
+  #about {
+    background-color: #fff;
+    padding: 30px;
+    margin: 0 auto;
+    max-width: 900px;
+    border-radius: 8px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Header styles */
+  h1 {
+    font-size: 2.5rem;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  h2 {
+    font-size: 1.8rem;
+    color: #2c3e50;
+    margin-top: 30px;
+    margin-bottom: 10px;
+  }
+  
+  /* Paragraphs */
+  p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 20px;
+  }
+  
+  /* Preformatted text for formulas */
+  pre {
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    color: #c0392b;
+    overflow-x: auto;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    margin: 20px 0;
+  }
+  
+  /* List styling */
+  ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  ul li {
+    margin-bottom: 10px;
+    font-size: 1rem;
+    color: #333;
+  }
+  
+  strong {
+    color: #2980b9;
+    font-weight: bold;
+  }
+  
+  /* Responsiveness */
+  @media (max-width: 768px) {
+    body {
+      padding: 10px;
+    }
+  
+    #about {
+      padding: 20px;
+    }
+  
+    h1 {
+      font-size: 2rem;
+    }
+  
+    h2 {
+      font-size: 1.5rem;
+    }
+  
+    p, pre {
+      font-size: 0.9rem;
+    }
+  }
+.h11{
+    width: 50px;
+}  

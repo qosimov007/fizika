@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+
+  <title>Simple Navbar</title>
+  <style>
+    /* Umumiy sahifa uslublari */
+    /* Umumiy sahifa uslublari */
+body {
+  font-family: Arial, sans-serif;
+  background: url('background.jpg') no-repeat center center fixed;
+  background-size: cover; /* This makes the image cover the whole screen */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Navbar va konteynerlar */
+.navbar {
+  width: 100%;
+  background-color: rgba(248, 249, 250, 0.8); /* Semi-transparent background for navbar */
+  padding: 10px 0;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+
+
+/* Add other styles as before... */
+
+    /* Navbar va konteynerlar */
+    .navbar {
+      width: 100%;
+      background-color: #f8f9fa;
+      padding: 10px 0;
+      display: flex;
+      justify-content: center;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 10;
+    }
+
+    .nav-link {
+      background: none;
+      border: none;
+      margin: 0 15px;
+      padding: 10px 20px;
+      font-size: 1em;
+      cursor: pointer;
+      color: #333;
+      font-weight: bold;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .nav-link:hover {
+      background-color: #4CAF50;
+      color: white;
+      border-radius: 25px;
+    }
+
+    .nav-link.active {
+      background-color: #4CAF50;
+      color: white;
+      border-radius: 25px;
+    }
+
+    /* Sahifa ustida navbarni hisobga olish */
+    .page {
+      margin-top: 70px; /* Navbarning balandligi */
+      display: none;
+      text-align: center;
+    }
+
+    .page.active {
+      display: block;
+    }
+
+    /* Home sahifasi konteyneri */
+    .container {
+      text-align: center;
+      background-color: white;
+      padding: 30px 40px;
+      border-radius: 15px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+      width: 400px;
+      border: 1px solid #ddd;
+      transition: all 0.3s ease;
+      margin: 0 auto; /* Markazlashtirish */
+    }
+
+    .container:hover {
+      transform: scale(1.02);
+      box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2);
+    }
+
+    h1 {
+      color: #333;
+      font-size: 1.8em;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+
+    label {
+      display: block;
+      font-size: 1.1em;
+      margin: 10px 0 5px;
+      color: #666;
+    }
+
+    input[type="number"] {
+      padding: 10px;
+      margin: 10px 0;
+      width: 150px;
+      text-align: center;
+      border: 2px solid #ddd;
+      border-radius: 25px;
+      font-size: 1em;
+      transition: border-color 0.3s ease, background-color 0.3s ease;
+      background-color: #e7f7ff;
+    }
+
+    input[type="number"]:focus {
+      border-color: #4CAF50;
+      outline: none;
+      background-color: #d4f0ff;
+    }
+
+    .calculate-btn {
+      background-color: #4CAF50;
+      padding: 12px 25px;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 1.2em;
+      border-radius: 50px;
+      margin-top: 20px;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .calculate-btn:hover {
+      background-color: #388e3c;
+      transform: scale(1.1);
+    }
+
+    /* Natijalar bo'limi */
+    #result {
+      color: #333;
+      font-size: 1.2em;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+    
+
+/* Home sahifasi konteyneri */
+.container {
+    text-align: center;
+    background-color: #fff;
+    padding: 40px;
+    height: 500px;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    width: 420px;
+    border: 1px solid #ddd;
+    transition: all 0.3s ease;
+    margin: 0 auto;
+    background: linear-gradient(145deg, #f2f2f2, #ffffff);
+}
+
+.container:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.15);
+}
+
+h1 {
+    color: #333;
+    font-size: 2em;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+label {
+    display: block;
+    font-size: 1.1em;
+    margin: 15px 0 5px;
+    color: #666;
+}
+
+input[type="number"] {
+    padding: 12px;
+    margin: 10px 0 20px;
+    width: 100%;
+    text-align: center;
+    border: 2px solid #ddd;
+    border-radius: 25px;
+    font-size: 1.1em;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+    background-color: #e7f7ff;
+}
+
+input[type="number"]:focus {
+    border-color: #4CAF50;
+    outline: none;
+    background-color: #d4f0ff;
+}
+
+button.calculate-btn {
+    background-color: #4CAF50;
+    padding: 14px 28px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2em;
+    border-radius: 50px;
+    margin-top: 20px;
+    transition: all 0.3s ease-in-out;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+button.calculate-btn:hover {
+    background-color: #388e3c;
+    transform: scale(1.1);
+}
+
+#result {
+    color: #333;
+    font-size: 1.2em;
+    margin-top: 20px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <button class="nav-link active" onclick="showPage('home')">Home</button>
+    <button class="nav-link" onclick="showPage('about')">Formula</button>
+    <button class="nav-link" onclick="showPage('massala')">Massala</button>
+  </nav>
+
+  <div id="home" class="page active">
+    <div class="container">
+      <h1>Issiq va Sovuq Suvni Aralashtirish</h1>
+      <form id="waterForm">
+        <label for="hotWater">Issiq suv (litrlarda):</label>
+        <input type="number" id="hotWater" value="80" min="0">
+        <label for="coldWater">Sovuq suv (litrlarda):</label>
+        <input type="number" id="coldWater" value="120" min="0">
+        <button class="calculate-btn" type="button" onclick="calculateWater()">Hisoblash</button>
+      </form>
+      <h2 id="result"></h2>
+    </div>
+  </div>
+
+  <div id="about" class="page">
+    <h1>Formula</h1>
+    <p>Aralashtirilgan suvlardan haroratni hisoblash uchun, issiq va sovuq suvlarning harorat o'zgarishini hisobga olgan energiya saqlanish qonunidan foydalanamiz.</p>
+    <p>Formulani quyidagicha ifodalash mumkin:</p>
+    <pre>
+      m₁ ⋅ c ⋅ (T_final - T₁) + m₂ ⋅ c ⋅ (T_final - T₂) = 0
+    </pre>
+    <p>Bu yerda:</p>
+    <ul>
+      <li><strong>m₁</strong> — issiq suvning massasi (80 litr),</li>
+      <li><strong>m₂</strong> — sovuq suvning massasi (120 litr),</li>
+      <li><strong>c</strong> — suvning issiqlik sig‘imi (o'rtacha qiymat c = 4.18 J/g°C),</li>
+      <li><strong>T₁</strong> — issiq suvning boshlang‘ich harorati (80°C),</li>
+      <li><strong>T₂</strong> — sovuq suvning boshlang‘ich harorati (5°C),</li>
+      <li><strong>T_final</strong> — yakuniy kerakli harorat.</li>
+    </ul>
+    <p>Agar faqat issiq suv bilan ishlayotgan bo'lsangiz, unda formula quyidagicha bo'ladi:</p>
+    <pre>
+      m₁ ⋅ c ⋅ (T_final - T₁) = 0
+    </pre>
+    <p>Bu holda T_final 80°C ga teng bo'ladi, chunki faqat issiq suv ishlatiladi.</p>
+  
+    <h2>1. Fizik asoslar:</h2>
+    <p>Issiq va sovuq suvni aralashtirganda, har bir suv o'zining issiqlik energiyasini o'z ichiga oladi. Energiya saqlanishi qonuni (ya'ni, energiyaning yo'qolmasligi) quyidagicha ifodalanadi:</p>
+    <pre>
+      Q_issiq + Q_sovuq = 0
+    </pre>
+    <p>Bu yerda:</p>
+    <ul>
+      <li><strong>Q_issiq</strong> — issiq suvning energiyasi,</li>
+      <li><strong>Q_sovuq</strong> — sovuq suvning energiyasi.</li>
+    </ul>
+  
+    <h2>2. Issiq va sovuq suvlarning energiyasi:</h2>
+    <p>Haroratning o'zgarishi bilan energiya miqdori quyidagicha hisoblanadi:</p>
+    <pre>
+      Q = m ⋅ c ⋅ ΔT
+    </pre>
+    <p>Bu yerda:</p>
+    <ul>
+      <li><strong>m</strong> — suyuqlikning massasi (litr yoki gram),</li>
+      <li><strong>c</strong> — suyuqlikning issiqlik sig'imi (suv uchun c = 4.18 J/g°C),</li>
+      <li><strong>ΔT</strong> — haroratning o'zgarishi (yakuniy harorat - boshlang'ich harorat).</li>
+    </ul>
+  
+    <h2>3. Energiya saqlanishi:</h2>
+    <p>Energiya saqlanish qonuniga ko'ra, issiq suvning energiyasi bilan sovuq suvning energiyasi teng va qarama-qarshi bo'lishi kerak:</p>
+    <pre>
+      m₁ ⋅ c ⋅ (T_final - T₁) + m₂ ⋅ c ⋅ (T_final - T₂) = 0
+    </pre>
+  
+    <h2>4. Formulani soddalashtirish:</h2>
+    <p>Suvning issiqlik sig'imi c bir xil bo'lgani uchun uni olib tashlaymiz:</p>
+    <pre>
+      m₁ ⋅ (T_final - T₁) = -m₂ ⋅ (T_final - T₂)
+    </pre>
+    <p>Keyin, formulani T_final ga nisbatan yechish uchun oddiy algebraik amallarni bajarib:</p>
+    <pre>
+      m₁ ⋅ T_final + m₂ ⋅ T_final = m₁ ⋅ T₁ + m₂ ⋅ T₂
+    </pre>
+    <p>Endi yakuniy haroratni topish uchun, uni quyidagicha ifodalaymiz:</p>
+    <pre>
+      T_final = (m₁ ⋅ T₁ + m₂ ⋅ T₂) / (m₁ + m₂)
+    </pre>
+  
+    <h2>5. Formulani tushuntirish:</h2>
+    <ul>
+      <li><strong>T_final</strong> — aralashmaning yakuniy harorati.</li>
+      <li><strong>m₁</strong> va <strong>m₂</strong> — issiq va sovuq suvlarning massalari.</li>
+      <li><strong>T₁</strong> va <strong>T₂</strong> — issiq va sovuq suvlarning boshlang'ich haroratlari.</li>
+    </ul>
+    <p>Bu formula, aralashgan suyuqliklarning haroratini hisoblashda ishlatiladi, ya'ni ikki suyuqlikni birlashtirganda, ular orasidagi harorat almashinuvi orqali yakuniy haroratni topishga imkon beradi.</p>
+  </div>
+  
+  
+
+  <div id="massala" class="page">
+    <h1 class="h11"> biri issiq suv uchun, boshqasi esa sovuq suv uchun. Issiq suv vazasida 80 litr suv bor, bu sizga qanday qulay bo'lsa. Sovuq suv vazasida esa 120 litr suv mavjud, bu ham sizning ixtiyoringizga ko'ra. Issiq suvning harorati 80 daraja, sovuq suvning harorati esa 5 daraja. Siz haroratni sozlashingiz mumkin. Nihoyat, siz suv qo'shayotganda, uning harorati 80 daraja bo'lishi kerak. Buning uchun issiq va sovuq suvni kombinatsiya qilish zarur. Natijada, men uchun 80 daraja haroratdagi suv muhimdir.<h1>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script>
+    // Funksiya sahifalarni ko'rsatish uchun
+    function showPage(pageId) {
+      const pages = document.querySelectorAll('.page');
+      pages.forEach(page => {
+        page.classList.remove('active');
+      });
+      document.getElementById(pageId).classList.add('active');
+
+      const links = document.querySelectorAll('.nav-link');
+      links.forEach(link => {
+        link.classList.remove('active');
+      });
+      const activeLink = Array.from(links).find(link => link.textContent.toLowerCase() === pageId);
+      if (activeLink) {
+        activeLink.classList.add('active');
+      }
+    }
+
+    // Suvni aralashtirish funksiyasi
+    function calculateWater() {
+      const hotWater = parseFloat(document.getElementById('hotWater').value);
+      const coldWater = parseFloat(document.getElementById('coldWater').value);
+
+      const hotTemp = 80;
+      const coldTemp = 5;
+      const desiredTemp = 30;
+
+      const totalWater = hotWater + coldWater;
+
+      if (totalWater === 0) {
+        document.getElementById('result').innerText = 'Iltimos, suv hajmini kiriting.';
+        return;
+      }
+
+      const mixedTemp = (hotWater * hotTemp + coldWater * coldTemp) / totalWater;
+
+      if (Math.abs(mixedTemp - desiredTemp) < 0.5) {
+        document.getElementById('result').innerText = `Ma'qul suv hosil bo‘ldi: ${mixedTemp.toFixed(2)}°C.`;
+      } else {
+        document.getElementById('result').innerText = `Aralashma harorati: ${mixedTemp.toFixed(2)}°C. Iltimos, suv hajmini sozlang.`;
+      }
+    }
+  </script>
+
+</body>
+</html>
